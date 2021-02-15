@@ -64,10 +64,10 @@ let images = [
     //再生ボタン
     @IBAction func startButton(_sender: Any) {
         if self.timer != nil {
-            
-           backButton.setTitleColor(UIColor.lightGray, for: .normal)
-           nextButton.setTitleColor(UIColor.lightGray, for: .normal)
-            
+            backButton.isEnabled = true
+           
+            nextButton.isEnabled = true
+           
            startButton.setTitle("再生", for: UIControl.State.normal)
             //タイマー停止
            timer?.invalidate()
@@ -81,10 +81,10 @@ let images = [
            timer = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(changeImage), userInfo: nil, repeats: true)
             
         backButton.isEnabled = false
-         backButton.setTitleColor(UIColor.lightGray, for: .normal)
+         
             
             nextButton.isEnabled = false
-           nextButton.setTitleColor(UIColor.lightGray, for: .normal)
+           
             
             
             
@@ -136,6 +136,8 @@ let images = [
     @IBAction func backToTitle(sender: UIStoryboardSegue) {
         
     }
+    @IBAction func unwind(_ segue: UIStoryboardSegue) {
+        }
     
 
 }
