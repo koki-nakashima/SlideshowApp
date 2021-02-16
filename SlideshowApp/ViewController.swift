@@ -21,6 +21,9 @@ let images = [
     
     @IBAction func onTapImage(_ sender: Any) {
         performSegue(withIdentifier: "result", sender: nil)
+        backButton.isEnabled = true
+       
+        nextButton.isEnabled = true
         startButton.setTitle("再生", for: UIControl.State.normal)
         timer?.invalidate()
          
