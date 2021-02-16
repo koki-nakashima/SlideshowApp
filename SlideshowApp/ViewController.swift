@@ -21,6 +21,11 @@ let images = [
     
     @IBAction func onTapImage(_ sender: Any) {
         performSegue(withIdentifier: "result", sender: nil)
+        startButton.setTitle("再生", for: UIControl.State.normal)
+        timer?.invalidate()
+         
+      timer = nil
+        
         
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
